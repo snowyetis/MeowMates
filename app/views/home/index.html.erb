@@ -1,0 +1,198 @@
+
+<html>
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Pacifico' %>
+
+</head>
+
+<body>
+    <div class="nav navbar-default">
+        <div class="pull-right">
+            <%= link_to "Sign Up", '#mod_SignUp', :id => 'btn_SignUp'  %>  | <%= link_to "Login", '#mod_Login', :id => 'btn_Login' %>
+        </div>
+    </div>
+
+    <div id="myCarousel" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-caption">
+
+                <h1>MeowMates</h1>
+                <h5>
+                    The world's first pet adoption site with a social spin.
+                </h5>
+                    <%= link_to "Get Started!", {:controller => 'home', :action => 'show' },  { class: "btn btn-primary" } %>
+                </div>
+                <div class="item active">
+                    <%= link_to image_tag("Cat_Home.jpg", :class => 'img') %>
+                </div>
+                <div class="item">
+                    <%= link_to image_tag("Cat_Home2.jpg", :class => 'img') %>
+                </div>
+                <div class="item">
+                    <%= link_to image_tag("Cat_Home3.jpg", :class => 'img') %>
+                </div>
+            </div>
+            <!--<a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>-->
+            <!--<a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>-->
+        </div>
+    </div>
+
+        <div class="modal fade" id="mod_SignUp">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div id="user" class="registration-modal-body small-top-spacer">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3>Step 1 - Sign Up</h3>
+                  <p>Create your user name and password. We promise to only user your e-mail to MeowMates official business.</p>
+                </div>
+                    <%= form_for(:user, :url => {:controller => 'home', :action => 'create'}) do |f| %>
+                        <div class="form-group">
+                            <div class='row small-topdown-spacer'>
+                                <label id="lbl_error_user" class="label label-danger"></label>
+                            </div>
+                            <%= f.text_field :username, :id => 'txt_user', :class => 'form-control',  :placeholder => 'Username' %>
+                        </div>
+                        <div class="form-group">
+                            <div class='row small-topdown-spacer'>
+                                <label id="lbl_error_email" class='label label-danger'></label>
+                            </div>
+                            <%= f.text_field :email, :id => 'txt_email', :class => 'form-control', :placeholder => 'E-mail', :params => :email %>
+                        </div>
+                        <div class="form-group">
+                            <label id="lbl_error_password" class="label label-danger small-topdown-spacer"></label>
+                            <%= f.password_field :password, :id => 'txt_password', :class => 'form-control', :placeholder => 'Password' %>
+                        </div>
+                        <div class="form-group">
+                          <label id="lbl_error_password_confirmation" class="label label-danger small-topdown-spacer"></label>
+                            <%= f.password_field :password_confirmation, :id => 'txt_confirm_password', :class => 'form-control', :placeholder => 'Confirm Password' %>
+                        </div>
+                    </div>
+              <div id="profile" class="registration-modal-body small-top-spacer">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h3>Step 2 - Create your Profile</h3>
+                      <p>Final step! Create your profile. This will serve as your MeowMates profile that you can use to browse the site, post animals
+                         or find your purrfect MeowMate.</p>
+                    </div>
+                        <div class="form-group">
+                            <label id="lbl_error_first_name" class="label label-danger small-topdown-spacer"></label>
+                            <%= f.text_field :first_name, :id => 'txt_first_name', :class => 'form-control', :placeholder => 'First Name' %>
+                        </div>
+                        <div class="form-group">
+                            <label id="lbl_error_last_name" class="label label-danger small-topdown-spacer"></label>
+                            <%= f.text_field :last_name, :id => 'txt_last_name', :class => 'form-control', :placeholder => 'Last Name' %>
+                        </div>
+                      <div class="form-group">
+                        <label id="lbl_error_address" class="label label-danger small-topdown-spacer"></label>
+                        <%= f.text_field :address, :id => 'txt_address', :class => 'form-control', :placeholder => 'Address' %>
+                      </div>
+                     <div class="form-group">
+                        <label id="lbl_error_city" class="label label-danger small-topdown-spacer"></label>
+                        <%= f.text_field :city, :id => 'txt_city', :class => 'form-control', :placeholder => 'City' %>
+                     </div>
+                     <div class="form-group">
+                        <label id="lbl_error_state" class="label label-danger small-topdown-spacer"></label>
+                        <%= f.text_field :state, :id => 'txt_state', :class => 'form-control', :placeholder => 'Address' %>
+                     </div>
+                     <div class="form-group">
+                        <label id="lbl_error_zip" class="label label-danger small-topdown-spacer"></label>
+                        <%= f.text_field :zip, :id => 'txt_zip', :class => 'form-control', :placeholder => 'Zip Code' %>
+                     </div>
+                     <div class="form-group">
+                        <label id="lbl_error_country" class="label label-danger small-topdown-spacer"></label>
+                        <%= f.text_field :country, :id => 'txt_country', :class => 'form-control', :placeholder => 'Country' %>
+                     </div>
+                    <div class="form-group">
+                        <label id="lbl_error_gender" class="label label-danger small-topdown-spacer"></label>
+                        <%= f.select( :gender, @arr_gender, {}, {:class => 'dropdown' } ) %>
+                    </div>
+                    <div class="form-group">
+                      <label id="lbl_error_month" class="label label-danger small-topdown-spacer"></label>
+                      Birthday
+                      <%= f.select(:month, (1..12).map {|m| [Date::MONTHNAMES[m], m]}) %>
+                      <%= f.select(:year, (1935..2014)) %>
+                    </div>
+                <div class="form-group">
+                  Breeder
+                  <label id="lbl_error_country" class="label label-danger small-topdown-spacer"></label>
+                  <%= f.check_box(:breeder, { class: 'checkbox-inline' }) %>
+                </div>
+            </div>
+                <div class="modal-footer mod-footer-color">
+                        <ol class="mod-signup-indicators">
+                            <li class="active">
+                              <a href="#user" style="display:none;">user</a>
+                            </li>
+                            <li>
+                              <a href="#profile" style="display:none;" >Profile</a>
+                            </li>
+                        </ol>
+                        <%= f.submit :Submit, :id => 'btn_Next', :class => 'btn btn-success' %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="mod_login">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3>Login</h3>
+              </div>
+              <div class="modal-body">
+                <%= form_for(:user, :url => {:controller => 'home', :action => 'login'}) do |f| %>
+                    <div class="form-group">
+                      <%= f.password_field :username, :id => 'txt_username_login', :class => 'form-control', :placeholder => 'Username' %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.password_field :password, :id => 'txt_password_login', :class => 'form-control', :placeholder => 'Password' %>
+                    </div>
+              </div>
+              <div class="modal-footer">
+                    <%= f.submit :Login, :id => 'btn_login', :class => 'btn btn-success' %>
+                <% end %>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#myCarousel').carousel({});
+            $('#myCarousel').carousel('cycle');
+
+            $('.mod-signup-indicators li').on('click', function() {
+
+                $(this).addClass('active');
+                var target = $(this).find('a').attr('href');
+
+                // the .not() makes it so if we are on that page, it doesn't fade in and out the same content
+                $('.registration-modal-body:visible').not(target).fadeOut('slow', function() {
+                    // after we fade out old content, fade in new
+                    $(target).fadeIn('slow');
+                });
+            });
+
+            $('#btn_SignUp').click(function () {
+                $('#mod_SignUp').modal();
+            });
+
+            $('#btn_Login').click(function () {
+                $('#mod_login').modal();
+            });
+
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>

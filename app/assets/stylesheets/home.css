@@ -1,0 +1,125 @@
+body {
+    padding-bottom: 0px;
+    height: 100%;
+    width: 100%;
+    color: #5a5a5a;
+    margin: 0;
+    margin-right: 0;
+    min-height: 100%;
+}
+
+/* Carousel base class */
+.carousel {
+    margin-bottom: 0px;
+}
+
+.carousel-control {
+    height: 80px;
+    margin-top: 250px;
+    font-size: 120px;
+    text-shadow: 0 1px 1px rgba(0,0,0,1);
+    background-color: transparent;
+    border: 0;
+    z-index: 10;
+}
+
+.carousel .item {
+    height: 100%;
+}
+.carousel img {
+    position: relative;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+    margin: 0;
+
+}
+
+.carousel-caption {
+    background-color: #0001;
+    position: absolute;
+    max-width: 400px;
+    padding: 35px 20px;
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-bottom: 42%;
+    z-index: 20;
+}
+
+.carousel-caption h1,
+.carousel-caption .lead {
+    margin: 0;
+    line-height: 1.25;
+    color: black;
+    text-shadow: 0 4px 4px rgba(0,0,0,.4);
+}
+.carousel-caption .btn {
+    margin-top: 10px;
+}
+
+.error-label {
+    margin-left: 25%;
+    font-size: medium;
+}
+
+.small-top-spacer {
+    padding-top:20px;
+}
+
+.small-topdown-spacer {
+    padding: 0  0 5px 30px;
+}
+
+.mod-footer-color {
+    background-color: rgb(169, 169, 169);
+}
+
+.mod-signup-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    text-align: center;
+    list-style: none;
+}
+.mod-signup-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #000 \9;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #fff;
+    border-radius: 10px;
+    list-style-type: none;
+}
+
+.mod-signup-indicators .active {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    background-color: #fff;
+}
+
+.mod-signup-indicators {
+    bottom: 20px;
+}
+
+#user {
+    display: block;
+}
+
+.registration-modal-body {
+    position: relative;
+    padding: 20px;
+    display: none;
+}
+
+
+
