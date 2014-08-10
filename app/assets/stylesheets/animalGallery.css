@@ -1,3 +1,48 @@
 .aList {
     list-style: none;
 }
+
+.carousel-inner > .item > a > img {
+    display: block;
+    max-width: 100%;
+    height: 65%;
+}
+
+img {
+    width:180px;
+    height:180px;
+}
+
+.cat-name {
+    padding-left: 35px;
+    font-size: 14px;
+    font-family: verdana, arial, helvetica, sans-serif;
+}
+
+.cat-summary {
+    padding-left:60px;
+    font-size: 10px;
+    font-family: verdana, arial, helvetica, sans-serif;
+}
+
+legend.create-animal-border {
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+}
+
+fieldset.create-animal {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+    box-shadow:  0px 0px 0px 0px #000;
+}
+
+.btn {
+    background-color: white;
+}
+
+form {
+    font-size: 12px;
+}

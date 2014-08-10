@@ -2,11 +2,39 @@
 <html>
 <head>
   <title>Meowmates</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div class="nav navbar-default">
+  <div class="navbar-brand">
+    <div class="brand-logo">
+      MeowMates
+    </div>
+  </div>
+  <ul class="nav nav-pills pull-right">
+    <% if user_signed_in? %>
+        <li>
+            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+        </li>
+        <li>
+          <%= link_to "Explore" %>
+        </li>
+    <% else %>
+        <li>
+            <%= link_to "Sign Up", '#mod_SignUp', :id => 'btn_SignUp'  %>
+        </li>
+        <li>
+          <%= link_to "Login", '#mod_Login', :id => 'btn_Login'%>
+        </li>
+    <% end %>
+  </ul>
+</div>
 
 <%= yield %>
 

@@ -3,17 +3,12 @@
 <head>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%= stylesheet_link_tag 'home.css' %>
   <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Pacifico' %>
 
 </head>
 
 <body>
-    <div class="nav navbar-default">
-        <div class="pull-right">
-            <%= link_to "Sign Up", '#mod_SignUp', :id => 'btn_SignUp'  %>  | <%= link_to "Login", '#mod_Login', :id => 'btn_Login' %>
-        </div>
-    </div>
-
     <div id="myCarousel" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-caption">
@@ -48,18 +43,16 @@
                     <h3>Step 1 - Sign Up</h3>
                   <p>Create your user name and password. We promise to only user your e-mail to MeowMates official business.</p>
                 </div>
-                    <%= form_for(:user, :url => {:controller => 'home', :action => 'create'}) do |f| %>
-                        <div class="form-group">
-                            <div class='row small-topdown-spacer'>
-                                <label id="lbl_error_user" class="label label-danger"></label>
-                            </div>
-                            <%= f.text_field :username, :id => 'txt_user', :class => 'form-control',  :placeholder => 'Username' %>
-                        </div>
+                    <%= form_for(resource, :as => resource_name, :url => user_registration_path(resource_name),
+                        :html => { :id => "sign_up_user" }, :format => true, :remote => true  ) do |f| %>
+                        <%= devise_error_messages! %>
+                        <div class="label label-danger" id="lbl_error"></div>
+                        <div class="label label-success" id="lbl_success"></div>
                         <div class="form-group">
                             <div class='row small-topdown-spacer'>
                                 <label id="lbl_error_email" class='label label-danger'></label>
                             </div>
-                            <%= f.text_field :email, :id => 'txt_email', :class => 'form-control', :placeholder => 'E-mail', :params => :email %>
+                            <%= f.email_field :email, :id => 'txt_email', :class => 'form-control', :placeholder => 'E-mail'%>
                         </div>
                         <div class="form-group">
                             <label id="lbl_error_password" class="label label-danger small-topdown-spacer"></label>
@@ -77,49 +70,6 @@
                       <p>Final step! Create your profile. This will serve as your MeowMates profile that you can use to browse the site, post animals
                          or find your purrfect MeowMate.</p>
                     </div>
-                        <div class="form-group">
-                            <label id="lbl_error_first_name" class="label label-danger small-topdown-spacer"></label>
-                            <%= f.text_field :first_name, :id => 'txt_first_name', :class => 'form-control', :placeholder => 'First Name' %>
-                        </div>
-                        <div class="form-group">
-                            <label id="lbl_error_last_name" class="label label-danger small-topdown-spacer"></label>
-                            <%= f.text_field :last_name, :id => 'txt_last_name', :class => 'form-control', :placeholder => 'Last Name' %>
-                        </div>
-                      <div class="form-group">
-                        <label id="lbl_error_address" class="label label-danger small-topdown-spacer"></label>
-                        <%= f.text_field :address, :id => 'txt_address', :class => 'form-control', :placeholder => 'Address' %>
-                      </div>
-                     <div class="form-group">
-                        <label id="lbl_error_city" class="label label-danger small-topdown-spacer"></label>
-                        <%= f.text_field :city, :id => 'txt_city', :class => 'form-control', :placeholder => 'City' %>
-                     </div>
-                     <div class="form-group">
-                        <label id="lbl_error_state" class="label label-danger small-topdown-spacer"></label>
-                        <%= f.text_field :state, :id => 'txt_state', :class => 'form-control', :placeholder => 'Address' %>
-                     </div>
-                     <div class="form-group">
-                        <label id="lbl_error_zip" class="label label-danger small-topdown-spacer"></label>
-                        <%= f.text_field :zip, :id => 'txt_zip', :class => 'form-control', :placeholder => 'Zip Code' %>
-                     </div>
-                     <div class="form-group">
-                        <label id="lbl_error_country" class="label label-danger small-topdown-spacer"></label>
-                        <%= f.text_field :country, :id => 'txt_country', :class => 'form-control', :placeholder => 'Country' %>
-                     </div>
-                    <div class="form-group">
-                        <label id="lbl_error_gender" class="label label-danger small-topdown-spacer"></label>
-                        <%= f.select( :gender, @arr_gender, {}, {:class => 'dropdown' } ) %>
-                    </div>
-                    <div class="form-group">
-                      <label id="lbl_error_month" class="label label-danger small-topdown-spacer"></label>
-                      Birthday
-                      <%= f.select(:month, (1..12).map {|m| [Date::MONTHNAMES[m], m]}) %>
-                      <%= f.select(:year, (1935..2014)) %>
-                    </div>
-                <div class="form-group">
-                  Breeder
-                  <label id="lbl_error_country" class="label label-danger small-topdown-spacer"></label>
-                  <%= f.check_box(:breeder, { class: 'checkbox-inline' }) %>
-                </div>
             </div>
                 <div class="modal-footer mod-footer-color">
                         <ol class="mod-signup-indicators">
@@ -131,53 +81,56 @@
                             </li>
                         </ol>
                         <%= f.submit :Submit, :id => 'btn_Next', :class => 'btn btn-success' %>
-                    <% end %>
+                <% end %>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal" id="mod_login">
+    <div class="modal fade" id="mod_login">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h3>Login</h3>
+               <h3>Login</h3>
               </div>
               <div class="modal-body">
-                <%= form_for(:user, :url => {:controller => 'home', :action => 'login'}) do |f| %>
+                <%= form_for(:user, :url => session_path(:user)) do |f| %>
                     <div class="form-group">
-                      <%= f.password_field :username, :id => 'txt_username_login', :class => 'form-control', :placeholder => 'Username' %>
+                      <%= f.text_field :email, :id => 'txt_username_login', :class => 'form-control', :placeholder => 'Username' %>
                     </div>
                     <div class="form-group">
                       <%= f.password_field :password, :id => 'txt_password_login', :class => 'form-control', :placeholder => 'Password' %>
                     </div>
+                    <div class="form-group">
+                      <%= f.check_box :remember_me %>
+                      <%= f.label :remember_me %>
+                    </div>
               </div>
-              <div class="modal-footer">
+              <div class="modal-footer mod-footer-color">
                     <%= f.submit :Login, :id => 'btn_login', :class => 'btn btn-success' %>
-                <% end %>
+                    <%= link_to "Forgot your password?", new_password_path(:user) %>
+              <% end %>
               </div>
             </div>
         </div>
     </div>
 
-    <script>
+    <script type="text/javascript">
 
         $(document).ready(function () {
 
             $('#myCarousel').carousel({});
             $('#myCarousel').carousel('cycle');
 
-            $('.mod-signup-indicators li').on('click', function() {
-
+            $('.mod-signup-indicators li').on('click', function () {
                 $(this).addClass('active');
-                var target = $(this).find('a').attr('href');
-
+                target = $(this).find('a').attr('href');
                 // the .not() makes it so if we are on that page, it doesn't fade in and out the same content
                 $('.registration-modal-body:visible').not(target).fadeOut('slow', function() {
-                    // after we fade out old content, fade in new
-                    $(target).fadeIn('slow');
-                });
+                // after we fade out old content, fade in new
+                $(target).fadeIn('slow');
             });
+        });
 
             $('#btn_SignUp').click(function () {
                 $('#mod_SignUp').modal();
@@ -187,7 +140,23 @@
                 $('#mod_login').modal();
             });
 
-
+//            $('#sign_up_user').submit(function (e) {
+//                e.preventDefault();
+//                var user_info = $(this).serializeObject();
+//                console.log("About to post to /users: " + JSON.stringify(user_info));
+//                $.ajax({
+//                    url: '/users.user',
+//                    type: 'POST',
+//                    datatype: 'json',
+//                    data: user_info,
+//                    success: function () {
+//                        $('lbl_success').html('BLAAA');
+//                    },
+//                    error: function () {
+//                        $('#lbl_error').html('NOOOOOO!');
+//                    }
+//                });
+//            });
 
         });
 
