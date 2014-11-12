@@ -5,9 +5,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="Current File" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf4f2bf-1a4d-4285-b6e7-8f678d6ff148" name="Default" comment="Profiles create completed.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="2bf4f2bf-1a4d-4285-b6e7-8f678d6ff148" name="Default" comment="Profiles create completed." />
     <ignored path="meowmates.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
