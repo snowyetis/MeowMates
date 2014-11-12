@@ -6,40 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bf4f2bf-1a4d-4285-b6e7-8f678d6ff148" name="Default" comment="Profiles create completed.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/.keep" afterPath="$PROJECT_DIR$/app/assets/images/.keep" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/Cat_Home.jpg" afterPath="$PROJECT_DIR$/app/assets/images/Cat_Home.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/Cat_Home2.jpg" afterPath="$PROJECT_DIR$/app/assets/images/Cat_Home2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/Cat_Home3.jpg" afterPath="$PROJECT_DIR$/app/assets/images/Cat_Home3.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/Cat_on_the_floor1.jpg" afterPath="$PROJECT_DIR$/app/assets/images/Cat_on_the_floor1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/Cats_In_Grass.jpg" afterPath="$PROJECT_DIR$/app/assets/images/Cats_In_Grass.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/app/assets/fonts/glyphicons-halflings-regular.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/app/assets/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/app/assets/fonts/glyphicons-halflings-regular.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/invalidCircle.png" afterPath="$PROJECT_DIR$/app/assets/images/invalidCircle.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/kitty-and-teddy-bear.jpg" afterPath="$PROJECT_DIR$/app/assets/images/kitty-and-teddy-bear.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/Corsconfig.xml" afterPath="$PROJECT_DIR$/app/assets/Corsconfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/animal/_cat_card.html.erb" afterPath="$PROJECT_DIR$/app/views/animal/_cat_card.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/animal/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/animal/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/animal.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/animal.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/animal.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/animal.js.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/animal.rb" afterPath="$PROJECT_DIR$/app/models/animal.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/animalGallery.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/animalGallery.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/animal_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/animal_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/bootstrap-theme.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bootstrap-theme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/bootstrap.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/app/assets/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/home.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/home.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/home.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/home.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/home.js.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/animal/index.html.erb" afterPath="$PROJECT_DIR$/app/views/animal/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/master.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/master.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/profile.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/profile.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/profile.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/profile.js.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="meowmates.iws" />
     <ignored path=".idea/workspace.xml" />
