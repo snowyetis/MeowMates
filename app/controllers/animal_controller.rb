@@ -17,7 +17,6 @@ class AnimalController < ApplicationController
   end
 
   def create
-
     @animal = Animal.new(animal_params)
     respond_to do |format|
         if @animal.save

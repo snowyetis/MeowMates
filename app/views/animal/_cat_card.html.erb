@@ -1,7 +1,9 @@
-<div id="animal-container" class="container-fluid padding-50">
-    <div class="row">
+<div class="row">
+      <% i = 0 %>
         <% @animal.each do |a| %>
-            <div class="col-lg-3" >
+          <% i += 1 %>
+          <% if i > 4 %>
+            <div class="col-sm-3" >
                 <div class="cat-card">
                     <%= link_to image_tag("cat_banner.jpg", :class => 'cat-img img-circle cat-card-img') %>
                     <h3 class="cat-name"><%= a.full_name %></h3>
@@ -16,5 +18,5 @@
                 </div>
             </div>
         <% end %>
-    </div>
+    <% end %>
 </div>
