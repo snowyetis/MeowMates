@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  firstname: MyString
+  lastname: MyString
+  age: 1
+  gender: MyString
+  purrfactor: 9.99
+  weight: 
+  height: MyString
+  length: MyString
+  fixed: false
+  shots: false
+  papers: false
+
+two:
+  firstname: MyString
+  lastname: MyString
+  age: 1
+  gender: MyString
+  purrfactor: 9.99
+  weight: 
+  height: MyString
+  length: MyString
+  fixed: false
+  shots: false
+  papers: false

@@ -18,6 +18,14 @@
     bottom:0;
 }
 
+.padding-top-15 {
+    padding: 15px 0 0 0;
+}
+
+.padding-reset {
+    padding: 0 0 0 0;
+}
+
 .padding-50 {
     padding: 50px 50px 50px 50px;
 }
@@ -25,6 +33,14 @@
 .padding-top-bottom-10 {
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.padding-top {
+    padding-bottom: 20px;
+}
+
+.padding-right {
+    padding-right:25px;
 }
 
 .small-text-input {
@@ -45,6 +61,10 @@
 
 .orange {
     color: #f0ad4e;
+}
+
+.green {
+    color: #67b168;
 }
 
  .peachbox {

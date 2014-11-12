@@ -28,7 +28,6 @@ class HomeController < ApplicationController
 
 
   def get_email()
-
      @db_email = User.where(email: params[:email]).first
      respond_to do |format|
        if @db_email.present? && @db_email.email == params[:email]

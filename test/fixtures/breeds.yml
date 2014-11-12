@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  breed_name: MyString
+  bred_desc: MyString
+  breed_disorder: MyString
+  created_date: 2014-05-19 01:34:03
+  updated_date: 2014-05-19 01:34:03
+
+two:
+  breed_name: MyString
+  bred_desc: MyString
+  breed_disorder: MyString
+  created_date: 2014-05-19 01:34:03
+  updated_date: 2014-05-19 01:34:03

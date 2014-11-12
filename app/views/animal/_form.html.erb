@@ -1,16 +1,24 @@
 <div class="container-fluid">
-  <div class="row padding-left-20 padding-bottom-20 border-bottom">
-    <h3 class="orange">Create your pets Profile</h3>
-    <p>With your profile your pet can browse other profiles and find the mate of his dreams.</p>
+  <div class="row padding-top-15 border-bottom">
+    <div class="col-sm-1 visible-lg visible-md">
+      <%= image_tag("create_animal_banner_small.png", :class => "img-circle cat-banner") %>
+    </div>
+    <div class="col-sm-offset-2">
+        <h3 class="orange">
+            Create your pets Profile
+        </h3>
+      <p class="padding-right">With your profile your pet can browse other profiles and find the mate of his dreams.</p>
+    </div>
   </div>
   <hr/>
   <div class="row">
     <div class="col-md-5">
-        <%= form_for(@animal, :url => { :controller => "animal", :action => "create" } ) do |f| %>
+
+        <%= form_for(@animal, :url => {:controller => "animal", :action => "create"}, :html => {:multipart => true} ) do |f| %>
         <!-- Error Handling -->
           <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
             <% if @animal.errors.any? %>
-                <div id="error_explanation" style="">
+                <div id="error_explanation">
                     <ul>
                         <% @animal.errors.full_messages.each do |msg| %>
                             <li><%= msg %></li>
@@ -97,14 +105,15 @@
             <%= f.label :shots %>
             <%= f.check_box :shots, :class => "checkbox" %>
           </div>
-          <h4 class="orange">Upload your Pets Photos!</h4>
-          <div class="form-group padding-top-bottom-10">
-            <label class="label label-warning">Attach Your Photo</label>
-            <div class="row padding-top-bottom-10"></div>
-          </div>
-        </div>
-      </div>
+        <div class="row padding-top-bottom-10"></div>
 
+        <h4 class="orange">Upload your Pets Photos!</h4>
+        <div class="form-group padding-top-bottom-10">
+          <%= f.file_field :animal_image %>
+          <div class="row padding-top-bottom-10"></div>
+        </div>
+        </div>
+        </div>
         <div class="peachbox">
           <h4 class="orange">Tell Us About Your Pet</h4>
           <p>Here is your chance to tell us about your pet.</p>

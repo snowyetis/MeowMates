@@ -1,13 +1,22 @@
 <%= stylesheet_link_tag "animalGallery.css" %>
 
-<div class="container-fluid padding-50">
-  <div class="row">
-    <div class="col-md-3">
-        <%= link_to image_tag("cat_banner.jpg", :class => 'img-circle') %>
-        <h3 class="cat-name">Kitty Meow!</h3>
-        Age: 21
-        Gender: M
-        Breed: Mix
-    </div>
-  </div>
+<div id="animal-container" class="container-fluid padding-50">
+
+    <% @animal.each do |a| %>
+        <div class="col-lg-3" >
+          <div class="cat-card">
+            <%= link_to image_tag("cat_banner.jpg", :class => 'cat-img img-circle cat-card-img') %>
+            <h3 class="cat-name"><%= a.full_name %></h3>
+            Age: <%= a.age %>
+            <span class="clearfix" />
+            Gender: <%= a.gender %>
+            <span class="clearfix" />
+            Breed: <%= a.breed_id %>
+            <span class="clearfix" />
+            <span class="padding-top-bottom-10"></span>
+            <%= button_to "Details", animal_path(@animal), :class => "btn btn-card", :method => :get %>
+          </div>
+        </div>
+    <% end %>
+
 </div>

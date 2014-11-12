@@ -9,34 +9,49 @@
 
   <%= csrf_meta_tags %>
 </head>
-<body>
+    <body>
+        <div class="nav navbar-default">
+          <div class="navbar-brand">
+            <div class="brand-logo">
+              MeowMates
+            </div>
+          </div>
+          <ul class="nav nav-pills pull-right">
+            <% if user_signed_in? %>
+                <li>
+                    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                </li>
+                <li>
+                  <%= link_to "Explore" %>
+                </li>
+            <% else %>
+                <li>
+                    <%= link_to "Sign Up", '#mod_SignUp', :id => 'btn_SignUp'  %>
+                </li>
+                <li>
+                  <%= link_to "Login", '#mod_Login', :id => 'btn_Login' %>
+                </li>
+                <li>
+                  <%= link_to "How It Works", '#walkthrough', :id => 'btn_walkthrough' %>
+                </li>
+            <% end %>
+          </ul>
+        </div>
 
-<div class="nav navbar-default">
-  <div class="navbar-brand">
-    <div class="brand-logo">
-      MeowMates
-    </div>
-  </div>
-  <ul class="nav nav-pills pull-right">
-    <% if user_signed_in? %>
-        <li>
-            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-        </li>
-        <li>
-          <%= link_to "Explore" %>
-        </li>
-    <% else %>
-        <li>
-            <%= link_to "Sign Up", '#mod_SignUp', :id => 'btn_SignUp'  %>
-        </li>
-        <li>
-          <%= link_to "Login", '#mod_Login', :id => 'btn_Login'%>
-        </li>
-    <% end %>
-  </ul>
-</div>
+        <!--TODO: Style flash messaging.-->
+        <% flash.each do |name, msg| %>
+            <% if flash[:error] %>
+                <span class="label label-danger form-error">
+                    <%= content_tag :div, msg, class: name %>
+                </span>
+            <% else %>
+                <span class="label label-info">
+                    <%= content_tag :div, msg, class: name %>
+                </span>
+            <% end %>
+        <% end %>
 
-<%= yield %>
+        <%= yield %>
 
-</body>
+    </body>
 </html>

@@ -1,0 +1,14 @@
+development:
+  access_key_id: AKIAIJNLLH3FNNRQRN6Q
+  secret_access_key: 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
+  bucket: purrrbucket
+    
+test:
+  access_key_id: AKIAIMDJUNRBWXEGMCJA
+  secret_access_key: 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
+  bucket: purrrbucket
+  
+production:
+  access_key_id: AKIAIO7XIDV453IKDPKA
+  secret_access_key: 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
+  bucket: purrrbucket
