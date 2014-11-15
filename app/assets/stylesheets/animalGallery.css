@@ -105,3 +105,8 @@ form {
     background-color: #2d6ca2;
     border-color: #2b669a;
 }
+
+.main-animalprofile-image {
+    width: 300px;
+    height: 300px;
+}

@@ -2,7 +2,7 @@
       <% i = 0 %>
         <% @animal.each do |a| %>
           <% i += 1 %>
-          <% if i > 4 %>
+          <% if i <= 4 %>
             <div class="col-sm-3" >
                 <div class="cat-card">
                     <%= link_to image_tag("cat_banner.jpg", :class => 'cat-img img-circle cat-card-img') %>
@@ -14,7 +14,22 @@
                     Breed: <%= a.breed_id %>
                     <span class="clearfix" />
                     <span class="padding-top-bottom-10"></span>
-                    <%= button_to "Details", animal_path(@animal), :class => "btn btn-card", :method => :get %>
+                  <%= button_to "Details", animal_path(a), :class => "btn btn-card", :method => "get" %>
+                </div>
+            </div>
+        <% else %>
+            <div class="col-sm-3 padding-top-250">
+                <div class="cat-card">
+                  <%= link_to image_tag("cat_banner.jpg", :class => 'cat-img img-circle cat-card-img') %>
+                  <h3 class="cat-name"><%= a.full_name %></h3>
+                  Age: <%= a.age %>
+                  <span class="clearfix" />
+                  Gender: <%= a.gender %>
+                  <span class="clearfix" />
+                  Breed: <%= a.breed_id %>
+                  <span class="clearfix" />
+                  <span class="padding-top-bottom-10"></span>
+                  <%= button_to "Details", animal_path(a), :class => "btn btn-card", :method => "get" %>
                 </div>
             </div>
         <% end %>

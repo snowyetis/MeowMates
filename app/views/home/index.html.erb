@@ -29,108 +29,14 @@
                     <%= link_to image_tag("Cat_Home3.jpg", :class => 'img') %>
                 </div>
             </div>
-            <!--<a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>-->
-            <!--<a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>-->
         </div>
-    </div>
-
-        <div class="modal fade" id="mod_SignUp">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div id="user" class="registration-modal-body small-top-spacer">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h3>Step 1 - Sign Up</h3>
-                  <p>Create your user name and password. We promise to only user your e-mail to MeowMates official business.</p>
-                </div>
-                    <%= form_for(resource, :as => resource_name, :url => user_registration_path(resource_name),
-                        :html => { :id => "sign_up_user" }, :format => true, :remote => true  ) do |f| %>
-                        <%= devise_error_messages! %>
-                        <div class="label label-danger" id="lbl_error"></div>
-                        <div class="label label-success" id="lbl_success"></div>
-                        <div class="form-group">
-                            <div class='row small-topdown-spacer'>
-                                <label id="lbl_error_email" class='label label-danger'></label>
-                            </div>
-                            <%= f.email_field :email, :id => 'txt_email', :class => 'form-control', :placeholder => 'E-mail'%>
-                        </div>
-                        <div class="form-group">
-                            <label id="lbl_error_password" class="label label-danger small-topdown-spacer"></label>
-                            <%= f.password_field :password, :id => 'txt_password', :class => 'form-control', :placeholder => 'Password' %>
-                        </div>
-                        <div class="form-group">
-                          <label id="lbl_error_password_confirmation" class="label label-danger small-topdown-spacer"></label>
-                            <%= f.password_field :password_confirmation, :id => 'txt_confirm_password', :class => 'form-control', :placeholder => 'Confirm Password' %>
-                        </div>
-                    </div>
-              <div id="profile" class="registration-modal-body small-top-spacer">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h3>Step 2 - Create your Profile</h3>
-                      <p>Final step! Create your profile. This will serve as your MeowMates profile that you can use to browse the site, post animals
-                         or find your purrfect MeowMate.</p>
-                    </div>
-            </div>
-                <div class="modal-footer mod-footer-color">
-                        <ol class="mod-signup-indicators">
-                            <li class="active">
-                              <a href="#user" style="display:none;">user</a>
-                            </li>
-                            <li>
-                              <a href="#profile" style="display:none;" >Profile</a>
-                            </li>
-                        </ol>
-                        <%= f.submit :Submit, :id => 'btn_Next', :class => 'btn btn-success' %>
-                <% end %>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="mod_login">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-               <h3>Login</h3>
-              </div>
-              <div class="modal-body">
-                <%= form_for(:user, :url => session_path(:user)) do |f| %>
-                    <div class="form-group">
-                      <%= f.text_field :email, :id => 'txt_username_login', :class => 'form-control', :placeholder => 'Username' %>
-                    </div>
-                    <div class="form-group">
-                      <%= f.password_field :password, :id => 'txt_password_login', :class => 'form-control', :placeholder => 'Password' %>
-                    </div>
-                    <div class="form-group">
-                      <%= f.check_box :remember_me %>
-                      <%= f.label :remember_me %>
-                    </div>
-              </div>
-              <div class="modal-footer mod-footer-color">
-                    <%= f.submit :Login, :id => 'btn_login', :class => 'btn btn-success' %>
-                    <%= link_to "Forgot your password?", new_password_path(:user) %>
-              <% end %>
-              </div>
-            </div>
-        </div>
-    </div>
 
     <script type="text/javascript">
 
         $(document).ready(function () {
-
+            // TODO: Convert to CoffeeScript
             $('#myCarousel').carousel({});
             $('#myCarousel').carousel('cycle');
-
-            $('.mod-signup-indicators li').on('click', function () {
-                $(this).addClass('active');
-                target = $(this).find('a').attr('href');
-                // the .not() makes it so if we are on that page, it doesn't fade in and out the same content
-                $('.registration-modal-body:visible').not(target).fadeOut('slow', function() {
-                // after we fade out old content, fade in new
-                $(target).fadeIn('slow');
-            });
-        });
 
             $('#btn_SignUp').click(function () {
                 $('#mod_SignUp').modal();
@@ -139,24 +45,6 @@
             $('#btn_Login').click(function () {
                 $('#mod_login').modal();
             });
-
-//            $('#sign_up_user').submit(function (e) {
-//                e.preventDefault();
-//                var user_info = $(this).serializeObject();
-//                console.log("About to post to /users: " + JSON.stringify(user_info));
-//                $.ajax({
-//                    url: '/users.user',
-//                    type: 'POST',
-//                    datatype: 'json',
-//                    data: user_info,
-//                    success: function () {
-//                        $('lbl_success').html('BLAAA');
-//                    },
-//                    error: function () {
-//                        $('#lbl_error').html('NOOOOOO!');
-//                    }
-//                });
-//            });
 
         });
 

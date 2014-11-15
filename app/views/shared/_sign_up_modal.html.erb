@@ -1,0 +1,43 @@
+<div class="modal fade" id="mod_SignUp">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div id="user" class="registration-modal-body small-top-spacer">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h3>Step 1 - Sign Up</h3>
+          <p>Create your user name and password. We promise to only user your e-mail to MeowMates official business.</p>
+        </div>
+        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+            <div class="label label-danger" id="lbl_error"></div>
+                <div class="label label-success" id="lbl_success"></div>
+                <div class="form-group">
+                    <div class='row small-topdown-spacer'>
+                        <label id="lbl_error_email" class='label label-danger'></label>
+                </div>
+                    <%= f.email_field :email, :id => 'txt_email', :class => 'form-control', :placeholder => 'E-mail'%>
+                </div>
+                <div class="form-group">
+                    <label id="lbl_error_password" class="label label-danger small-topdown-spacer"></label>
+                    <%= f.password_field :password, :id => 'txt_password', :class => 'form-control', :placeholder => 'Password' %>
+                </div>
+                <div class="form-group">
+                    <label id="lbl_error_password_confirmation" class="label label-danger small-topdown-spacer"></label>
+                    <%= f.password_field :password_confirmation, :id => 'txt_confirm_password', :class => 'form-control', :placeholder => 'Confirm Password' %>
+                </div>
+            </div>
+            <div class="modal-footer mod-footer-color">
+              <%= render "devise/shared/links" %>
+              <ol class="mod-signup-indicators">
+                <li class="active">
+                  <a href="#user" style="display:none;">user</a>
+                </li>
+                <li>
+                  <a href="#profile" style="display:none;" >Profile</a>
+                </li>
+              </ol>
+              <%= f.submit :Submit, :id => 'btn_Next', :class => 'btn btn-success'  %>
+        <% end %>
+        </div>
+     </div>
+  </div>
+</div>

@@ -10,23 +10,6 @@ class HomeController < ApplicationController
     @animal = Animal.find(params[:id])
   end
 
-=begin
-  def create
-
-    @user = User.new(params[:user].permit(:username, :email, :password, :password_confirmation ))
-    @profile = Profile.new[params[:profile].permit(:first_name, :last_name, :address, :city,
-                                                   :state, :zip, :country, :gender, :birth_date, :breeder)]
-
-    if @user.save
-      render 'profile/profile'
-    else
-      render 'index'
-    end
-
-  end
-=end
-
-
   def get_email()
      @db_email = User.where(email: params[:email]).first
      respond_to do |format|

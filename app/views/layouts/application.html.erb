@@ -38,20 +38,24 @@
           </ul>
         </div>
 
-        <!--TODO: Style flash messaging.-->
-        <% flash.each do |name, msg| %>
-            <% if flash[:error] %>
-                <span class="label label-danger form-error">
-                    <%= content_tag :div, msg, class: name %>
-                </span>
-            <% else %>
-                <span class="label label-info">
-                    <%= content_tag :div, msg, class: name %>
-                </span>
-            <% end %>
-        <% end %>
+        <div class="container">
+          <% [:notice, :error, :alert].each do |level| %>
+              <% unless flash[level].blank? %>
+                  <div class="alert alert-<%= flash_class(level) %>">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <%= flash[level] %>
+                  </div>
+              <% end %>
+          <% end %>
+          <br />
+        </div>
+
+        <%= render "shared/login_modal" %>
+
+        <%= render "shared/sign_up_modal" %>
 
         <%= yield %>
+        <%= yield :javascript %>
 
     </body>
 </html>

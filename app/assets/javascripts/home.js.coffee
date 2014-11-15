@@ -27,24 +27,6 @@ jQuery ->
       else
         $('#lbl_error_email').html('')
 
-    $("#sign_up_user").on 'submit', (e) ->
-        e.preventDefault()
-        $.ajax
-          type: "POST"
-          url: $(@).attr('users/registrations/create')
-          data: $(@).serializeArray()
-          dataType: "json"
-        beforeSend: =>
-          $(@).find('.form-error').remove()
-          success: (user) =>
-      # If saved, will here return the saved user
-          error: (xhr) ->
-          errors = $.parseJSON(xhr.responseText).errors
-      # If any errors, "errors" will contains ActiveRecord validations errors
-          console.log 'lalalalal' + errors # JSON object containing errors
-
-  # Functions start here #
-
   validateUserName = (userName) ->
     if userName.length < 3
       return false

@@ -2,15 +2,17 @@ Meowmates::Application.routes.draw do
 
   root to: 'home#index'
 
+  devise_for :user
+
   # devise_scope :users do
   #   post 'home' => 'users/registrations#create'
   # end
 
-  devise_for :users, :controllers => { :registrations => 'users/registrations' }
-
-  devise_scope '/users' do
-    resources :registrations
-  end
+  # devise_for :users, :controllers => { :registrations => 'users/registrations' }
+  #
+  # devise_scope '/users' do
+  #   resources :registrations
+  # end
 
   #devise_for :users, :post => '/home/index', :controllers => 'users/registrations#create'
   #post 'home' => 'users/registrations#create', :as => :user_registration_path

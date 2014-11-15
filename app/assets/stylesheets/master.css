@@ -18,6 +18,16 @@
     bottom:0;
 }
 
+.padding-top-250 {
+    padding-top: 250px;
+    /*padding-bottom: 50px;*/
+}
+
+.padding-top-bottom-30 {
+    padding-top: 30px;
+    padding-botom: 30px;
+}
+
 .padding-top-15 {
     padding: 15px 0 0 0;
 }

@@ -19,8 +19,9 @@ class Animal < ActiveRecord::Base
             :papers
             :animal_image_content_type
             :animal_image_file_name
-  # TODO: Make this a min character requirement.
-  validates :animal_desc, presence: true
+  validates :animal_desc,
+            presence: true,
+            length: {minimum: 140 }
             :breed_id
 
   has_attached_file :animal_image,
@@ -29,8 +30,8 @@ class Animal < ActiveRecord::Base
                     :bucket  => "purrrbucket",
                     :s3_credentials => {
                         :bucket  => "purrrbucket",
-                        :access_key_id => ENV["AKIAIJNLLH3FNNRQRN6Q"],
-                        :secret_access_key => ENV["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"]
+                        :access_key_id => ENV["access_key_id"],
+                        :secret_access_key => ENV["secret_access_key"]
                     },
                     :s3_permissions => "private",
                     :url => ":s3_domain_url"

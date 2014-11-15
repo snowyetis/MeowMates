@@ -1,0 +1,35 @@
+<%= stylesheet_link_tag "animalGallery.css" %>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-offset-1 padding-top-bottom-30">
+      <%= link_to image_tag("cat_banner.jpg", :class => "img-rounded main-animalprofile-image") %>
+    </div>
+    <section class="col-sm-offset-7">
+      <ul class="list-group">
+        <li class="list-group-item-heading"><%= @animal.full_name %></li>
+        <li class="list-group-item">
+          Age: <%= @animal.age %>
+        </li>
+        <li class="list-group-item">
+          Weight: <%= @animal.weight %>
+        </li>
+        <li class="list-group-item">
+          Height: <%= @animal.height %>
+        </li>
+        <li class="list-group-item">
+          Length: <%= @animal.length %>
+        </li>
+        <li class="list-group-item">
+          Fixed:  <%= @animal.fixed %>
+        </li>
+        <li class="list-group-item">
+          Shots:  <%= @animal.shots %>
+        </li>
+        <li class="list-group-item">
+          Papers  <%= @animal.papers %>
+        </li>
+      </ul>
+    </section>
+  </div>
+</div>
