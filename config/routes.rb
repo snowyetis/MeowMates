@@ -4,24 +4,6 @@ Meowmates::Application.routes.draw do
 
   devise_for :user
 
-  # devise_scope :users do
-  #   post 'home' => 'users/registrations#create'
-  # end
-
-  # devise_for :users, :controllers => { :registrations => 'users/registrations' }
-  #
-  # devise_scope '/users' do
-  #   resources :registrations
-  # end
-
-  #devise_for :users, :post => '/home/index', :controllers => 'users/registrations#create'
-  #post 'home' => 'users/registrations#create', :as => :user_registration_path
-
-  # devise_for :users
-  #   as :user do
-  #     post 'home', to: 'users/registrations#create'
-  # end
-
   get "home/index"
   get 'home/get_email' => 'home#get_email'
   get "home/show" => "home#show"
@@ -29,10 +11,6 @@ Meowmates::Application.routes.draw do
   get "home/login" => "home#login"
 
   get "animal/get_animals" => "animal#get_animals"
-
-  # get "animal/new(.:format)" => "animal#new"
-  # get "animal/:id" => "animal#show"
-  # post "animal(.:format)" => "animal#create"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -46,7 +24,7 @@ Meowmates::Application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
       #resources :home, :profile
-      resources :home, :animal
+      resources :home, :animal, :profile
 
   # Example resource route with options:
   #   resources :products do

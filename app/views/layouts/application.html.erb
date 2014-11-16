@@ -38,7 +38,7 @@
           </ul>
         </div>
 
-        <div class="container">
+        <div class="label label-danger hidden">
           <% [:notice, :error, :alert].each do |level| %>
               <% unless flash[level].blank? %>
                   <div class="alert alert-<%= flash_class(level) %>">

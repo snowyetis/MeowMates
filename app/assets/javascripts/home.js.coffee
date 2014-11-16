@@ -65,3 +65,5 @@ jQuery ->
   passwordStrength = (password) ->
     if password  < 6
       return false
+
+

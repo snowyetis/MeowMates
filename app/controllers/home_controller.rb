@@ -10,6 +10,8 @@ class HomeController < ApplicationController
     @animal = Animal.find(params[:id])
   end
 
+
+
   def get_email()
      @db_email = User.where(email: params[:email]).first
      respond_to do |format|
