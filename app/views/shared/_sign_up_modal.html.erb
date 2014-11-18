@@ -7,7 +7,7 @@
           <h3>Step 1 - Sign Up</h3>
           <p>Create your user name and password. We promise to only user your e-mail to MeowMates official business.</p>
         </div>
-        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+        <%= form_for(resource,:id => "signup_form", :as => resource_name, :url => registration_path(resource_name)) do |f| %>
             <div class="label label-danger" id="lbl_error"></div>
                 <div class="label label-success" id="lbl_success"></div>
                 <div class="form-group">
@@ -25,7 +25,6 @@
                     <%= f.password_field :password_confirmation, :id => 'txt_confirm_password', :class => 'form-control', :placeholder => 'Confirm Password' %>
                 </div>
             </div>
-            <% end %>
             <div id="profile" class="registration-modal-body small-top-spacer">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -33,38 +32,7 @@
                 <p>Final step! Create your profile. This will serve as your MeowMates profile that you can use to browse the site, post animals
                   or find your purrfect MeowMate.</p>
               </div>
-                <%= form_for(:profile, :url => {:controller => 'profile', :action => 'create'}) do |f| %>
-                    <div class="form-group">
-                      <%= f.text_field :first_name, :class => 'form-control',  :placeholder => 'First Name' %>
-                    </div>
-                    <div class="form-group">
-                      <%= f.text_field :last_name, :class => 'form-control', :placeholder => 'Last Name' %>
-                    </div>
-                    <div class="form-group">
-                      <%= f.text_field :gender, :class => 'form-control', :placeholder => 'Gender' %>
-                    </div>
-                    <div class="form-group">
-                      <%= f.text_field :birth_date, :class => 'form_control', :placeholder => 'Birth Date' %>
-                    </div>
-                    <div class="form-group">
-                      <%= f.text_field :address, :class => 'form-control', :placeholder => 'Street Address' %>
-                    </div>
-                    <div class="form-group">
-                      <%= f.text_field :city, :class => 'form-control', :placeholder => 'City' %>
-                    </div>
-                    <div class="form-group">
-                      <%= f.text_field :state, :class => 'form-control', :placeholder => 'State' %>
-                    </div>
-                    <div class="form-group">
-                      <%= f.text_field :zip, :class => 'form-control', :placeholder => 'Zipcode' %>
-                    </div>
-                    <div class="form-group">
-                      <%= f.text_field :country, :class => 'form-control', :placeholder => 'Street Address' %>
-                    </div>
-                    <div class="form-group">
-                      Are you a breeder? <%= f.check_box :breeder, :class => 'checkbox' %>
-                    </div>
-                </div>
+            </div>
             <div class="modal-footer mod-footer-color">
               <ol class="mod-signup-indicators">
                 <li class="active">
@@ -74,8 +42,8 @@
                   <a href="#profile" style="display:none;" >Profile</a>
                 </li>
               </ol>
-              <%= f.submit :Submit, :id => 'btn_Next', :class => 'btn btn-success'  %>
-        <% end %>
+              <%= f.submit :Submit, :id => 'btn_Submit', :class => 'btn btn-success'  %>
+           <% end %>
         </div>
      </div>
   </div>
@@ -85,8 +53,20 @@
 <script>
 
     $(document).ready(function () {
-        $('.mod-signup-indicators li').on('click', function () {
-            $(this).addClass('active');
+        $('.mod-signup-indicators li:first-child').on('click', function () {
+            $('.mod-signup-indicators li:first-child').addClass('active');
+            $('.mod-signup-indicators li:last-child').removeClass('active');
+            target = $(this).find('a').attr('href');
+            // the .not() makes it so if we are on that page, it doesn't fade in and out the same content
+            $('.registration-modal-body:visible').not(target).fadeOut('slow', function () {
+                // after we fade out old content, fade in new
+                $(target).fadeIn('slow');
+            });
+        });
+
+        $('.mod-signup-indicators li:last-child').on('click', function () {
+            $('.mod-signup-indicators li:first-child').removeClass('active');
+            $('.mod-signup-indicators li:last-child').addClass('active');
             target = $(this).find('a').attr('href');
             // the .not() makes it so if we are on that page, it doesn't fade in and out the same content
             $('.registration-modal-body:visible').not(target).fadeOut('slow', function () {

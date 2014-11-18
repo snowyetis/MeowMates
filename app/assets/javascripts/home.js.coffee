@@ -66,4 +66,7 @@ jQuery ->
     if password  < 6
       return false
 
-
+#  $("#btn_submit").live "click", (e) ->
+#    e.preventDefault()
+#    $("#signup_form").trigger "submit"
+#    $("#profile_form").trigger "submit"
