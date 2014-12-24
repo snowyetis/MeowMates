@@ -13,13 +13,16 @@
         <div class="nav navbar-default">
           <div class="navbar-brand">
             <div class="brand-logo">
-              <%= link_to "MeowMates", "home/" %>
+              <%= link_to "MeowMates", "home/", :id => "logo" %>
             </div>
           </div>
           <ul class="nav nav-pills pull-right">
             <% if user_signed_in? %>
                 <li>
                     <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                </li>
+                <li>
+                  <%= link_to "My Animals", "animal/show" %>
                 </li>
                 <li>
                   <%= link_to "Explore", "animal/" %>
