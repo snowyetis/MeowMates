@@ -1,16 +1,20 @@
 <div class="container-fluid">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put}) do |f| %>
       <%= devise_error_messages! %>
-      <div class="row user-row col-sm-12">
-        <h2>Edit Your Account</h2>
+      <div class="col-sm-12">
+
+
+        <h4>Edit Your Account</h4>
+
+        <div class="row padding-top-bottom-10"></div>
         <div class="col-sm-6">
           <div class="form-group">
             <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "E-mail" %>
           </div>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <div class="form-group">
-              Currently waiting confirmation for: <%= resource.unconfirmed_email %>
-            </div>
+              <div class="form-group">
+                Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+              </div>
           <% end %>
           <div class="form-group">
             <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "Current Password" %>
@@ -28,20 +32,22 @@
       <div class="row padding-top-bottom-10"></div>
       <div class="row profile-row col-sm-12">
         <h2>Edit Your Profile</h2>
-            <div class="col-sm-6">
-              <%= f.fields_for :Profile do |pf| %>
-                  <%= render :partial => "shared/profile_form", :locals => { :f => pf } %>
-              <% end %>
-            </div>
+
+        <div class="col-sm-6">
+          <%= f.fields_for :Profile do |pf| %>
+              <%= render :partial => "shared/profile_form", :locals => {:f => pf} %>
+          <% end %>
+        </div>
       </div>
       <div class="row padding-top-bottom-10"></div>
       <div class="form-group">
-        <%= f.submit "Update", class: "btn btn-success"  %>
+        <%= f.submit "Update", class: "btn btn-success" %>
       </div>
-    <% end %>
-    <h3>Cancel My Account</h3>
+  <% end %>
+  <h3>Cancel My Account</h3>
 
-    <p>Unhappy? (Nobodies Purrrfect) <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
+  <p>Unhappy? (Nobodies
+    Purrrfect) <%= button_to "Cancel my account", registration_path(resource_name), data: {confirm: "Are you sure?"}, method: :delete, class: "btn btn-danger" %></p>
 
-    <%= link_to "Back", :back %>
+  <%= link_to "Back", :back %>
 </div>
