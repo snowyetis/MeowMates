@@ -7,9 +7,7 @@ Meowmates::Application.routes.draw do
   get "home/index"
   get 'home/get_email' => 'home#get_email'
   get "home/show" => "home#show"
-  get "profile/new" => "profile#new"
   get "home/login" => "home#login"
-
   get "animal/get_animals" => "animal#get_animals"
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -23,7 +21,6 @@ Meowmates::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-      #resources :home, :profile
       resources :home, :animal, :profile
 
   # Example resource route with options:

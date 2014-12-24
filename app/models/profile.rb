@@ -17,4 +17,5 @@ class Profile < ActiveRecord::Base
 
             :month
             :year
+
 end

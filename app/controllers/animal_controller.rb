@@ -13,7 +13,11 @@ class AnimalController < ApplicationController
   end
 
   def show
-    @animal = Animal.find(params[:id])
+    if (params[:id].blank?)
+      @animal = Animal.find(params[:id])
+    else
+      @animal = Animal.new
+    end
   end
 
   def create

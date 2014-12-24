@@ -30,8 +30,11 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3>Step 2 - Create your Profile</h3>
                 <p>Final step! Create your profile. This will serve as your MeowMates profile that you can use to browse the site, post animals
-                  or find your purrfect MeowMate.</p>
+                  and find your purrfect MeowMate.</p>
               </div>
+            <%= f.fields_for :Profile do |pf| %>
+                <%= render :partial => "shared/profile_form", :locals => { :f => pf } %>
+              <% end %>
             </div>
             <div class="modal-footer mod-footer-color">
               <ol class="mod-signup-indicators">

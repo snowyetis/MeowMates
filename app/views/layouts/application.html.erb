@@ -13,7 +13,7 @@
         <div class="nav navbar-default">
           <div class="navbar-brand">
             <div class="brand-logo">
-              MeowMates
+              <%= link_to "MeowMates", "home/" %>
             </div>
           </div>
           <ul class="nav nav-pills pull-right">
@@ -22,7 +22,10 @@
                     <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
                 </li>
                 <li>
-                  <%= link_to "Explore" %>
+                  <%= link_to "Explore", "animal/" %>
+                </li>
+                <li>
+                  <%= link_to "My Account",  "user/edit"  %>
                 </li>
             <% else %>
                 <li>
@@ -38,7 +41,7 @@
           </ul>
         </div>
 
-        <div class="label label-danger hidden">
+        <div class="container">
           <% [:notice, :error, :alert].each do |level| %>
               <% unless flash[level].blank? %>
                   <div class="alert alert-<%= flash_class(level) %>">
