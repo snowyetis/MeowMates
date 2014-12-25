@@ -17,11 +17,14 @@ class Devise::RegistrationsController < DeviseController
   def create
     build_resource(sign_up_params)
 
-    @profile = Profile.new
-
     resource_saved = resource.save
     yield resource if block_given?
     if resource_saved
+
+      build_resource(configure_profile_params)
+      @Profile = Profile.create(profile_params)
+      @Profile.save
+
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_flashing_format?
         sign_up(resource_name, resource)
@@ -147,5 +150,20 @@ class Devise::RegistrationsController < DeviseController
 
   def account_update_params
     devise_parameter_sanitizer.sanitize(:account_update)
+  end
+
+  #def configure_profile_params
+    #devise_parameter_sanitizer.sanitize(:profile)
+    #devise_parameter_sanitizer.for(:profile).push(:first_name, :last_name, :gender, :birth_date,
+    #                               #:address, :city, :state, :zip, :country, :breeder)
+  #end
+
+  #TODO: Add Profile Params to Registration Create and Update.
+  def profile_params
+    devise_parameter_sanitizer.sanitize(:profile)
+    devise_parameter_sanitizer.for(:profile).push(:first_name, :last_name, :gender, :birth_date,
+                                   :address, :city, :state, :zip, :country, :breeder)
+    params.require(:profile).permit(:first_name, :last_name, :gender, :birth_date,
+                                    :address, :city, :state, :zip, :country, :breeder)
   end
 end

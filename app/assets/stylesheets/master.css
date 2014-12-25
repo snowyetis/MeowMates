@@ -85,7 +85,7 @@
      height: 225px;
  }
 
- #logo a:hover, a:visited, a:active {
+ #logo {
      color: #FFFFFF;
      text-decoration: none;
      link:none;
@@ -104,6 +104,9 @@
 }
 
 .profile-row {
+    border: 4px dotted;
+    border-radius: 25px;
+    color: #e7e7e7;
    background-color: #f0ad4e;
     display: block;
     padding-top: 30px;

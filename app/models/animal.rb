@@ -1,5 +1,6 @@
 class Animal < ActiveRecord::Base
   belongs_to :profile
+  has_one  :profile
   has_many :breeds
 
   validates :full_name, presence: true

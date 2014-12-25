@@ -6,8 +6,12 @@ class HomeController < ApplicationController
     return @arr_gender
   end
 
+  # on login
   def show
-    @animal = Animal.find(params[:id])
+    @profile = Profile.find(1)
+    @user = User.find(current_user.id)
+    @animal = Animal.find_all_by_profile_id(@profile.id)
+    #@animal = Animal.find(params[:id])
   end
 
   def get_email()
