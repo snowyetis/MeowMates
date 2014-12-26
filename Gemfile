@@ -60,3 +60,5 @@ gem 'paperclip', '~> 4.1.1'
 gem 'aws-sdk'
 
 gem 'haml-rails'
+
+gem 'mailboxer'

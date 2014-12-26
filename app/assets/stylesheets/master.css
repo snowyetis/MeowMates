@@ -114,3 +114,11 @@
     margin-right: auto;
     margin-left: auto;
 }
+
+#info-list.list-group {
+    border: none;
+}
+
+.list-group-item {
+    border:none;
+}
