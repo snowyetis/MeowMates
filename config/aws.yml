@@ -1,14 +1,14 @@
 development:
-  access_key_id: AKIAI3DJWYSZUK74RCIA
-  secret_access_key: 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
+  access_key_id: 
+  secret_access_key: 
   bucket: purrrbucket
     
 test:
-  access_key_id: AKIAI3DJWYSZUK74RCIA
-  secret_access_key: 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
+  access_key_id: 
+  secret_access_key: 
   bucket: purrrbucket
   
 production:
-  access_key_id: AKIAI3DJWYSZUK74RCIA
-  secret_access_key: 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
+  access_key_id: 
+  secret_access_key: 
   bucket: purrrbucket
