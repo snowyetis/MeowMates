@@ -70,3 +70,8 @@ jQuery ->
 #    e.preventDefault()
 #    $("#signup_form").trigger "submit"
 #    $("#profile_form").trigger "submit"
+
+
+  $('#btn_inbox').on 'click', (e) ->
+    e.preventDefault()
+    $('#inbox-model').modal()

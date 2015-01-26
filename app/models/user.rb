@@ -22,4 +22,15 @@ class User < ActiveRecord::Base
   :last_sign_in_at
   :profile_id
 
+  # Mailboxer
+  def name
+    # You'd, probably, want to have a separate name column instead
+    email
+  end
+
+  def mailboxer_email(object)
+    email
+  end
+
+
 end

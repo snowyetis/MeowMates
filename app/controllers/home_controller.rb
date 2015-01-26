@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   # skip_before_filter :auth_user
+  helper_method :mailbox, :conversation
 
   def index
     @arr_gender = ['Male','Female']
@@ -11,7 +12,17 @@ class HomeController < ApplicationController
     @profile = Profile.find(1)
     @user = User.find(current_user.id)
     @animal = Animal.find_all_by_profile_id(@profile.id)
+    #@conversation ||= current_user.mailbox.inbox.all
+    @message = current_user.messages.new
+
     #@animal = Animal.find(params[:id])
+  end
+
+  def create
+    @recipient = User.find(params[:user])
+    current_user.send_message(@recipient, params[:body], params[:subject])
+    flash[:notice] = "Message has been sent!"
+    redirect_to :conversations
   end
 
   def get_email()
@@ -27,4 +38,4 @@ class HomeController < ApplicationController
      end
   end
 
-  end
+end

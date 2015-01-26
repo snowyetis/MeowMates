@@ -1,13 +1,14 @@
 <%= stylesheet_link_tag "animalGallery.css" %>
 
 <div class="container-fluid">
+  <h2><%= @animal.full_name %>'s Purrrfile</h2>
   <div class="row">
-    <div class="col-sm-offset-1 padding-top-bottom-30">
-      <%= link_to image_tag("cat_banner.jpg", :class => "img-rounded main-animalprofile-image") %>
-    </div>
-    <section class="col-sm-offset-7">
+        <div class="col-sm-6 padding-top-bottom-30">
+          <%= link_to image_tag("cat_banner.jpg", :class => "img-rounded main-animalprofile-image") %>
+        </div>
+    <section class="col-sm-offset-6 padding-top-bottom-30">
       <ul class="list-group">
-        <li class="list-group-item-heading"><%= @animal.full_name %></li>
+        <li class="list-group-item-heading list-unstyled"><%= @animal.full_name %></li>
         <li class="list-group-item">
           Age: <%= @animal.age %>
         </li>
@@ -31,5 +32,8 @@
         </li>
       </ul>
     </section>
+    <div class="col-sm-12 padding-top-bottom-30">
+      About Me: <%= @animal.animal_desc %>
+    </div>
   </div>
 </div>

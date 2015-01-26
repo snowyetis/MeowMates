@@ -1,0 +1,11 @@
+<%= content_tag  :li, conversation do |conversation| %>
+    <p>
+      <%= link_to conversation.subject, conversation_path(conversation) %>
+
+      <!-- if conversation.is_completely_trashed?(current_user) %>-->
+        <!-- link_to "Untrash", untrash_conversation_path(conversation) %>-->
+      <!-- else %>-->
+        <!-- link_to "Move to Trash", trash_conversation_path(conversation) %>-->
+      <!-- end %>-->
+    </p>
+<% end %>

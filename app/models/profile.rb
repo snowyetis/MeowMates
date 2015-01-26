@@ -15,7 +15,7 @@ class Profile < ActiveRecord::Base
             length: {minimum: 1, maximum: 2 }
   validates :birth_date, presence: true
   validates :breeder, presence: true
-
+            :user_id
             :month
             :year
 

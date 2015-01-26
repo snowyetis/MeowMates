@@ -5,7 +5,7 @@
     </div>
     <div class="col-sm-offset-3">
       <h4 class="orange">
-        Welcome <%= @profile.first_name %> <%= @profile.last_name %> !
+        Welcome <%= @profile.first_name %> <%= @profile.last_name %>!
       </h4>
     </div>
     <div class="col-sm-offset-3">
@@ -13,12 +13,12 @@
         <ul id="info-list" class="list-group">
           <li class="list-group-item">
             Member since:
-            <span class="badge"><%= @user.created_at.year  %></span>
+            <span class="badge"><%= @user.created_at.year %></span>
           </li>
           <li class="list-group-item">
             Last online:
             <span class="badge">
-               <%=  @user.last_sign_in_at.to_date %>
+               <%= @user.last_sign_in_at.to_date %>
             </span>
           </li>
           <li class="list-group-item">
@@ -36,42 +36,31 @@
     </div>
     <div class="col-sm-offset-3">
       <div class="col-sm-5">
-        <ul class="list-group">
-          <li class="list-group-item">
-                Messages Received:
-            <span class="badge">
-              23
-            </span>
-          </li>
-          <li class="list-group-item">
-            Messages Sent:
-            <span class="badge">
-              45
-            </span>
-          </li>
-          <li class="list-group-item">
-            Messages Deleted:
-            <span class="badge">
-              32
-            </span>
+        <% if current_user.mailbox.inbox.any? %>
+            <% current_user.mailbox.inbox.each do |conversation| %>
+                <%= render partial: 'conversations/conversation', object: conversation %>
+            <% end %>
+        <% end %>
+        <ul>
+          <li>
+            <%= link_to "Start Conversation", :new_message %>
           </li>
         </ul>
       </div>
     </div>
   </div>
-  <hr/>
   <div class="row">
     <div class="col-sm-12">
-        <h4>Purrralytics</h4>
+      <h4>Purrralytics</h4>
       <ul class="form-group">
-          <li class="list-group-item">
-            Number of animals:
+        <li class="list-group-item">
+          Number of animals:
                 <span class="badge">
                     <%= @animal.count %>
                 </span>
-          </li>
+        </li>
         <li class="list-group-item">
-            Pets adopted:
+          Pets adopted:
             <span class="">
             </span>
         </li>
@@ -91,7 +80,6 @@
   <div class="row">
     <div class="col-sm-12">
       <h4>My animals</h4>
-
     </div>
   </div>
 </div>

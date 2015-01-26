@@ -1,0 +1,9 @@
+<h4>Conversation Subject</h4>
+<ul class="list-group">
+  <%= content_tag_for(:li, conversation.receipts_for(current_user)) do |receipt| %>
+      <%= mesage = receipt.message %>
+      <h4><%= message.subject %></h4>
+      <p><%= mesage.body %></p>
+      <%= render "messages/form", conversation: conversation %>
+  <% end %>
+</ul>

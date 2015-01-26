@@ -1,3 +1,8 @@
+.carousel-image {
+    with:90%;
+    height:90%;
+}
+
 .brand-logo {
     color: #000000;
     font-size: 24px;

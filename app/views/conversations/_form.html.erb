@@ -1,0 +1,6 @@
+<%= form_for(:conversations, url: :conversations) do |f| %>
+    <%= f.input :recipients %>
+    <%= f.input :subject %>
+    <%= f.input :body, as: :text %>
+    <%= f.submit class: "btn btn-primary" %>
+<% end %>
